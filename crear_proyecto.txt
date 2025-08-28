@@ -1,0 +1,124 @@
+@echo off
+REM Script para crear la estructura del proyecto ERP Modular
+
+REM Crear proyecto Flutter
+echo Creando proyecto Flutter...
+flutter create --org com.salunacorp erp_modular
+cd erp_modular
+
+REM Limpiar archivos base
+del /Q lib\*
+del /Q test\*
+
+REM Crear estructura de directorios Frontend
+echo Creando estructura de directorios Frontend...
+
+REM Directorio core
+mkdir lib\core
+mkdir lib\core\constantes
+mkdir lib\core\modelos
+mkdir lib\core\servicios
+mkdir lib\core\temas
+mkdir lib\core\widgets
+mkdir lib\core\utilidades
+
+REM Directorio plugins
+mkdir lib\plugins
+mkdir lib\plugins\contabilidad
+mkdir lib\plugins\contabilidad\modelos
+mkdir lib\plugins\contabilidad\vistas
+mkdir lib\plugins\contabilidad\servicios
+
+mkdir lib\plugins\inventario
+mkdir lib\plugins\inventario\modelos
+mkdir lib\plugins\inventario\vistas
+mkdir lib\plugins\inventario\servicios
+
+mkdir lib\plugins\facturacion
+mkdir lib\plugins\facturacion\modelos
+mkdir lib\plugins\facturacion\vistas
+mkdir lib\plugins\facturacion\servicios
+
+REM Directorio shared
+mkdir lib\shared
+mkdir lib\shared\widgets
+mkdir lib\shared\utilidades
+mkdir lib\shared\constantes
+
+REM Crear estructura Backend
+echo Creando estructura Backend...
+mkdir backend
+cd backend
+
+REM Crear entorno virtual
+python -m venv venv
+
+REM Estructura API Gateway
+mkdir api_gateway
+mkdir api_gateway\auth
+mkdir api_gateway\rutas
+mkdir api_gateway\middleware
+
+REM Estructura Microservicios
+mkdir microservicios
+mkdir microservicios\contabilidad
+mkdir microservicios\inventario
+mkdir microservicios\facturacion
+
+REM Estructura Shared Backend
+mkdir shared
+mkdir shared\modelos
+mkdir shared\utilidades
+
+REM Crear archivos base Frontend
+echo Creando archivos base Frontend...
+echo. > lib\main.dart
+echo. > lib\core\constantes\configuracion.dart
+echo. > lib\core\constantes\rutas.dart
+echo. > lib\core\modelos\plugin_base.dart
+echo. > lib\core\modelos\usuario.dart
+echo. > lib\core\modelos\respuesta_api.dart
+echo. > lib\core\servicios\gestor_plugins.dart
+echo. > lib\core\servicios\gestor_autenticacion.dart
+echo. > lib\core\servicios\gestor_api.dart
+echo. > lib\core\temas\tema_claro.dart
+echo. > lib\core\temas\tema_oscuro.dart
+echo. > lib\core\temas\gestor_temas.dart
+echo. > lib\core\widgets\tarjeta_glass.dart
+echo. > lib\core\widgets\boton_neon.dart
+echo. > lib\core\widgets\dialogo_carga.dart
+echo. > lib\core\utilidades\validadores.dart
+echo. > lib\core\utilidades\formateadores.dart
+
+REM Crear archivos base Backend
+echo Creando archivos base Backend...
+echo. > backend\api_gateway\main.py
+echo. > backend\api_gateway\auth\__init__.py
+echo. > backend\api_gateway\rutas\__init__.py
+echo. > backend\api_gateway\middleware\__init__.py
+
+REM Crear archivos de configuración
+echo Creando archivos de configuración...
+echo. > .env
+echo. > backend\requirements.txt
+
+REM Instalar dependencias Flutter
+echo Instalando dependencias Flutter...
+flutter pub add flutter_bloc
+flutter pub add get_it
+flutter pub add dio
+flutter pub add supabase_flutter
+flutter pub add firebase_core
+flutter pub add firebase_auth
+flutter pub add firebase_analytics
+flutter pub add firebase_messaging
+flutter pub add google_fonts
+flutter pub add flutter_animate
+flutter pub add lottie
+flutter pub add intl
+flutter pub add logger
+flutter pub add uuid
+flutter pub add --dev flutter_lints
+flutter pub add --dev build_runner
+
+echo Estructura del proyecto creada exitosamente!

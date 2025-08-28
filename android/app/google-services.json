@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1089324494289",
+    "project_id": "salumina-v-0-0-1",
+    "storage_bucket": "salumina-v-0-0-1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089324494289:android:44aba8b11455b9393904f0",
+        "android_client_info": {
+          "package_name": "com.example.salumina"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5eYfZC_K14mv2aad4I-mMXZ6T6h-oczs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
