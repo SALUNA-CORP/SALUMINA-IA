@@ -24,3 +24,5 @@ build/
 # Sistemas
 .DS_Store
 Thumbs.db
+
+erp_modular/
